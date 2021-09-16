@@ -12,6 +12,13 @@ black = (0, 0, 0)
 
 segment_size = 20
 
-display.fill(green)
+while True:
+    events = pygame.event.get()
+    for event in events:
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            quit()
 
-pygame.display.flip()
+    display.fill(green)
+    pygame.draw.rect(display, black, [width // 2, height // 2, segment_size, segment_size])
+    pygame.display.flip()
