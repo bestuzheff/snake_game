@@ -12,6 +12,9 @@ black = (0, 0, 0)
 
 segment_size = 20
 
+head_x = width // 2
+head_y = height // 2
+
 while True:
     events = pygame.event.get()
     for event in events:
@@ -20,5 +23,5 @@ while True:
             quit()
 
     display.fill(green)
-    pygame.draw.rect(display, black, [width // 2, height // 2, segment_size, segment_size])
+    pygame.draw.rect(display, black, [head_x, head_y, segment_size, segment_size])
     pygame.display.flip()
