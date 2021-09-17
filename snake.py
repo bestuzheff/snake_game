@@ -1,6 +1,9 @@
 import pygame
 import time
 import random
+import os
+
+os.getcwd()
 
 pygame.init()
 
@@ -37,10 +40,10 @@ def show_snake(snake_list):
         pygame.draw.rect(display, black, [_x, _y, segment_size, segment_size])
 
 
-def show_score(score):
-    _font = pygame.font.SysFont("None", 30)
-    value = _font.render("Очки: " + str(score), True, black)
-    display.blit(value, [10, 10])
+# def show_score(score):
+#     _font = pygame.font.SysFont("./arial.ttf", 30)
+#     value = _font.render("Очки: " + str(score), True, black)
+#     display.blit(value, [10, 10])
 
 
 
@@ -56,11 +59,11 @@ while True:
         game_over = True
 
     if game_over:
-        font = pygame.font.SysFont("None", 100)
-        f_width, f_height = font.size("GAME OVER")
-        message = font.render("GAME OVER", True, (255, 0, 0))
-        display.blit(message, [(width - f_width) // 2, (height - f_height) // 2])
-        pygame.display.flip()
+        # font = pygame.font.SysFont("./arial.ttf", 100)
+        # f_width, f_height = font.size("GAME OVER")
+        # message = font.render("GAME OVER", True, (255, 0, 0))
+        # display.blit(message, [(width - f_width) // 2, (height - f_height) // 2])
+        # pygame.display.flip()
         time.sleep(2)
         pygame.quit()
         quit()
@@ -95,7 +98,7 @@ while True:
         del(snake[0])
 
     show_snake(snake)
-    show_score(snake_lenght - 1)
+    # show_score(snake_lenght - 1)
 
     pygame.draw.rect(display, (255, 0, 0), [food_x, food_y, segment_size, segment_size])
 
